@@ -54,7 +54,7 @@
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center space-x-2">
                     <i data-lucide="heart-handshake" class="text-blue-600 h-6 w-6"></i>
-                    <span class="font-serif text-xl font-medium text-blue-800">BatEl Levian InnerPeace Support</span>
+                    <span class="font-serif text-xl font-medium text-blue-800">InnerPeace Support</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#welcome" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
@@ -236,7 +236,7 @@
     <footer class="bg-white border-t border-blue-100 py-10">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <div class="mb-4 md:mb-0">
-                &copy; 2024 InnerPeace Support Services. All rights reserved.
+                &copy; 2026 BatEl Levian InnerPeace Support Services. All rights reserved.
             </div>
             <div class="flex space-x-6">
                 <a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
@@ -251,12 +251,11 @@
         lucide.createIcons();
 
         // ---------------------------------------------------------
-        // SETTINGS: REPLACE THIS WITH YOUR EMAIL
+        // SETTINGS: YOUR EMAIL
         // ---------------------------------------------------------
         
         const YOUR_EMAIL_ADDRESS = "etay1594@gmail.com"; 
         
-        // Example: const YOUR_EMAIL_ADDRESS = "jane@example.com";
         // ---------------------------------------------------------
 
         // Form Handling Logic
@@ -268,12 +267,6 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-
-            // Safety check for user setup
-            if (YOUR_EMAIL_ADDRESS === "INSERT_YOUR_EMAIL_HERE") {
-                alert("Please open the index.html file and replace 'INSERT_YOUR_EMAIL_HERE' with your actual email address.");
-                return;
-            }
 
             // UI Feedback
             submitBtn.classList.add('hidden');
@@ -318,4 +311,3 @@
     </script>
 </body>
 </html>
-
