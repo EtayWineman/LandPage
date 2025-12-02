@@ -154,7 +154,8 @@
                 </div>
 
                 <!-- The Form -->
-                <form id="contactForm" class="space-y-6">
+                <!-- ADDED ACTION and METHOD here as fallback -->
+                <form id="contactForm" action="https://formsubmit.co/etay1594@gmail.com" method="POST" class="space-y-6">
                     <!-- Setup hidden inputs for FormSubmit -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
@@ -225,7 +226,7 @@
                 </div>
 
                 <div id="errorMessage" class="hidden text-center py-4 text-red-500">
-                    <p>Something went wrong. Please try again later.</p>
+                    <p>Connection error. Please try again later.</p>
                 </div>
 
             </div>
@@ -236,7 +237,7 @@
     <footer class="bg-white border-t border-blue-100 py-10">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
             <div class="mb-4 md:mb-0">
-                &copy; 2026 BatEl Levian InnerPeace Support Services. All rights reserved.
+                &copy; 2024 InnerPeace Support Services. All rights reserved.
             </div>
             <div class="flex space-x-6">
                 <a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
@@ -253,9 +254,7 @@
         // ---------------------------------------------------------
         // SETTINGS: YOUR EMAIL
         // ---------------------------------------------------------
-        
         const YOUR_EMAIL_ADDRESS = "etay1594@gmail.com"; 
-        
         // ---------------------------------------------------------
 
         // Form Handling Logic
@@ -275,7 +274,7 @@
 
             const formData = new FormData(form);
 
-            // Use fetch to send to FormSubmit.co via AJAX
+            // Try the "Invisible" AJAX way first
             fetch("https://formsubmit.co/ajax/" + YOUR_EMAIL_ADDRESS, {
                 method: "POST",
                 headers: { 
@@ -284,21 +283,29 @@
                 },
                 body: JSON.stringify(Object.fromEntries(formData))
             })
-            .then(response => response.json())
+            .then(response => {
+                // If response is not OK (like a 400/500 error because email isn't activated)
+                // We throw an error to hit the 'catch' block below
+                if (!response.ok) {
+                    throw new Error("Activation Needed");
+                }
+                return response.json();
+            })
             .then(data => {
                 loadingMessage.classList.add('hidden');
-                if (data.success === "false" || (data.message && data.message.includes("error"))) {
+                if (data.success === "false") {
                     throw new Error("Form submission failed");
                 }
                 form.classList.add('hidden');
                 successMessage.classList.remove('hidden');
             })
             .catch(error => {
-                console.log('FAILED...', error);
-                loadingMessage.classList.add('hidden');
-                submitBtn.classList.remove('hidden');
-                errorMessage.classList.remove('hidden');
-                errorMessage.innerText = "Connection error. Please try again.";
+                console.log('AJAX failed, trying standard submission...', error);
+                
+                // FALLBACK: If the background submit failed (usually because of activation),
+                // we submit the form normally. This will redirect the user to FormSubmit's
+                // activation page or success page.
+                form.submit(); 
             });
         });
 
