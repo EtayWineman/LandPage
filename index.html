@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compassionate Support | You Are Not Alone</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        sage: {
+                            50: '#f4f7f5',
+                            100: '#e3ebe6',
+                            200: '#c5d9cd',
+                            300: '#9cbda9',
+                            400: '#759e85',
+                            500: '#548266',
+                            600: '#416650',
+                            700: '#365241',
+                            800: '#2d4135',
+                            900: '#26362d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-in { animation: fadeIn 0.8s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-sage-50 text-gray-700 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-sage-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="heart-handshake" class="text-sage-600 h-6 w-6"></i>
+                    <span class="font-serif text-xl font-medium text-sage-800">InnerPeace Support</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#welcome" class="text-gray-600 hover:text-sage-600 transition-colors">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-sage-600 transition-colors">Services</a>
+                    <a href="#contact" class="bg-sage-600 text-white px-5 py-2 rounded-full hover:bg-sage-700 transition-colors shadow-md">Get Help</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Welcome Section -->
+    <section id="welcome" class="relative pt-20 pb-24 md:pt-32 md:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-sage-100 text-sage-700 text-sm font-medium tracking-wide mb-6">Welcome to a Safe Space</span>
+            <h1 class="font-serif text-4xl md:text-6xl text-sage-900 mb-6 leading-tight">
+                Navigating life's emotions, <br> <span class="text-sage-600 italic">together.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Sometimes the weight of the world feels too heavy to carry alone. I provide compassionate, non-judgmental emotional support to help you find balance and peace.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-sage-600 text-white px-8 py-3 rounded-full text-lg hover:bg-sage-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Connect With Me
+                </a>
+                <a href="#services" class="bg-white text-sage-700 border border-sage-200 px-8 py-3 rounded-full text-lg hover:bg-sage-50 transition-all">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Explanation -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-sage-900 mb-4">How Can I Support You?</h2>
+                <div class="h-1 w-20 bg-sage-300 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">My approach is grounded in empathy and active listening. Here are the core areas where we can work together.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-sage-50 p-8 rounded-2xl hover:shadow-lg transition-shadow border border-sage-100">
+                    <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-sm mb-6">
+                        <i data-lucide="ear" class="text-sage-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold text-sage-800 mb-3">Active Listening</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        A dedicated time where you are truly heard. Express your thoughts and feelings without fear of judgment or interruption.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-sage-50 p-8 rounded-2xl hover:shadow-lg transition-shadow border border-sage-100">
+                    <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-sm mb-6">
+                        <i data-lucide="sun" class="text-sage-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold text-sage-800 mb-3">Stress Management</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Practical tools and emotional guidance to help you navigate daily stressors, anxiety, and overwhelming situations.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-sage-50 p-8 rounded-2xl hover:shadow-lg transition-shadow border border-sage-100">
+                    <div class="bg-white w-12 h-12 rounded-full flex items-center justify-center shadow-sm mb-6">
+                        <i data-lucide="heart" class="text-sage-600 h-6 w-6"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-semibold text-sage-800 mb-3">Grief & Healing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Walking beside you through difficult transitions and loss, providing a steady presence as you find your path to healing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-16 bg-sage-600 text-white text-center px-4">
+        <div class="max-w-3xl mx-auto">
+            <i data-lucide="quote" class="h-8 w-8 mx-auto opacity-50 mb-4"></i>
+            <p class="font-serif text-2xl md:text-3xl italic leading-relaxed">"The greatest healing therapy is friendship and love."</p>
+            <p class="mt-4 text-sage-200 uppercase tracking-widest text-sm">— Hubert H. Humphrey</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-sage-50">
+        <div class="max-w-xl mx-auto px-4 sm:px-6">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-sage-100">
+                
+                <!-- Form Header -->
+                <div class="text-center mb-8">
+                    <h2 class="font-serif text-3xl text-sage-900 mb-2">Let's Connect</h2>
+                    <p class="text-gray-600">Please leave your details below. I review every message personally and will reach out to you.</p>
+                </div>
+
+                <!-- The Form -->
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="user" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="text" id="fullName" name="fullName" required 
+                                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-sage-500 focus:border-sage-500 transition-colors"
+                                placeholder="Jane Doe">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Cellphone Number</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="phone" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="tel" id="phone" name="phone" required 
+                                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-sage-500 focus:border-sage-500 transition-colors"
+                                placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i data-lucide="mail" class="h-5 w-5 text-gray-400"></i>
+                            </div>
+                            <input type="email" id="email" name="email" required 
+                                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-sage-500 focus:border-sage-500 transition-colors"
+                                placeholder="jane@example.com">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitBtn"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-sage-600 hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sage-500 transition-all transform active:scale-95">
+                        Request Contact
+                    </button>
+                    
+                    <p class="text-xs text-center text-gray-400 mt-4">
+                        <i data-lucide="lock" class="inline h-3 w-3 mr-1"></i> Your information is kept strictly confidential.
+                    </p>
+                </form>
+
+                <!-- Status Messages -->
+                <div id="loadingMessage" class="hidden text-center py-4">
+                     <p class="text-sage-600 animate-pulse font-medium">Sending your request...</p>
+                </div>
+
+                <div id="successMessage" class="hidden text-center py-10 fade-in">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-sage-100 mb-6">
+                        <i data-lucide="check" class="h-8 w-8 text-sage-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif text-sage-900 font-medium mb-4">Message Received</h3>
+                    <p class="text-gray-600 text-lg">
+                        Thank you for contacting us, we will get back to you soon.
+                    </p>
+                    <button onclick="resetForm()" class="mt-8 text-sage-600 hover:text-sage-800 text-sm font-medium underline underline-offset-4">
+                        Send another message
+                    </button>
+                </div>
+
+                <div id="errorMessage" class="hidden text-center py-4 text-red-500">
+                    <p>Something went wrong. Please try again or email me directly.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-sage-100 py-10">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <div class="mb-4 md:mb-0">
+                &copy; 2024 InnerPeace Support Services. All rights reserved.
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-sage-600 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-sage-600 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ---------------------------------------------------------
+        // EMAIL CONFIGURATION
+        // ---------------------------------------------------------
+        
+        // Keys from your configuration:
+        const EMAILJS_PUBLIC_KEY = "ROQFJZoVCdp504mI6"; 
+        const EMAILJS_SERVICE_ID = "service_rivk1s9"; 
+        const EMAILJS_TEMPLATE_ID = "template_nwdsrz7";
+        
+        // ---------------------------------------------------------
+
+        // Initialize EmailJS immediately (No check needed)
+        (function() {
+             emailjs.init(EMAILJS_PUBLIC_KEY);
+        })();
+
+        // Form Handling Logic
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const loadingMessage = document.getElementById('loadingMessage');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // UI Feedback
+            submitBtn.classList.add('hidden');
+            loadingMessage.classList.remove('hidden');
+            errorMessage.classList.add('hidden');
+
+            // Send Email
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+                .then(function() {
+                    // Success
+                    console.log('SUCCESS!');
+                    loadingMessage.classList.add('hidden');
+                    form.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                }, function(error) {
+                    // Fail
+                    console.log('FAILED...', error);
+                    loadingMessage.classList.add('hidden');
+                    submitBtn.classList.remove('hidden');
+                    errorMessage.classList.remove('hidden');
+                    errorMessage.innerText = "Error: " + JSON.stringify(error);
+                });
+        });
+
+        function resetForm() {
+            form.reset();
+            successMessage.classList.add('hidden');
+            form.classList.remove('hidden');
+            submitBtn.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
